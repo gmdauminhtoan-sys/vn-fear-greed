@@ -1,0 +1,35 @@
+name: Update Dashboard
+
+on:
+  push:
+    paths:
+      - '*.csv'
+      - 'csv/**'
+      - 'data.json'
+  workflow_dispatch:  # Cho phép chạy thủ công từ GitHub
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Process CSV and build dashboard
+        run: python build.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data.json index.html
+          git diff --staged --quiet || git commit -m "Update dashboard $(date +'%Y-%m-%d %H:%M')"
+          git push
