@@ -1,6 +1,6 @@
-# CSV input files (export từ Amibroker — chỉ cần ở máy local)
-csv/*.csv
-*.csv
+# CSV input files không cần track (chỉ giữ update.csv)
+# Uncomment dòng dưới nếu muốn ignore toàn bộ CSV khác
+# *.csv
 
 # AI session context (không phải code)
 SESSION_CONTEXT.md
