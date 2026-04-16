@@ -1,5 +1,5 @@
 # CSV input files (export từ Amibroker — chỉ cần ở máy local)
-csv/
+csv/*.csv
 *.csv
 
 # AI session context (không phải code)
