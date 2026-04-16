@@ -11,7 +11,7 @@ from datetime import datetime
 
 # =================== CAU HINH ===================
 WATCH_DIR = r"E:\APP\vn-fear-greed"
-WATCH_FILE = "update.csv"
+WATCH_FILE = "csv/update.csv"
 CHECK_INTERVAL = 10  # Kiem tra moi 10 giay
 # =================================================
 

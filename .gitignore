@@ -1,0 +1,15 @@
+# CSV input files (export từ Amibroker — chỉ cần ở máy local)
+csv/
+*.csv
+
+# AI session context (không phải code)
+SESSION_CONTEXT.md
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db

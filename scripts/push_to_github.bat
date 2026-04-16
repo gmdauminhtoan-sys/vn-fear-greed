@@ -7,7 +7,7 @@ chcp 65001 >nul
 :: ============================================
 
 set REPO_DIR=E:\APP\vn-fear-greed
-set CSV_FILE=update.csv
+set CSV_FILE=csv\update.csv
 
 cd /d %REPO_DIR%
 
