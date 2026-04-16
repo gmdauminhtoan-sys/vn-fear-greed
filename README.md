@@ -50,17 +50,44 @@ vn-fear-greed/
 ├── build.py              # Core data processing & HTML generation script
 ├── data.json             # Historical dataset (VN-Index sessions from 2020)
 ├── index.html            # Interactive dashboard (auto-generated)
-├── update.csv            # Latest market data input
+├── .gitignore
+│
+├── csv/                  # Market data input (not tracked by git)
+│   └── update.csv        # Export từ Amibroker vào đây
+│
+├── scripts/              # Local automation tools
+│   ├── setup_git.bat     # One-time Git & credential setup
+│   ├── push_to_github.bat# Manual push after Amibroker export
+│   ├── start_watcher.bat # Launch auto-watcher
+│   └── watcher.py        # Monitors csv/update.csv, auto-pushes on change
+│
 └── .github/
     └── workflows/
-        └── update.yml    # GitHub Actions automation workflow
+        └── update.yml    # GitHub Actions: build & deploy on push
 ```
 
 ---
 
 ## 🚀 How to Update
 
-1. Prepare a CSV file with the latest VN-Index session data using this format:
+### Workflow
+
+```
+Amibroker export CSV
+        ↓
+  csv/update.csv
+        ↓
+  scripts/push_to_github.bat   (manual)
+  OR scripts/start_watcher.bat (automatic)
+        ↓
+  GitHub Actions runs build.py
+        ↓
+  Dashboard updated
+```
+
+### CSV Format
+
+Export từ Amibroker với các cột sau:
 
 ```
 Ticker,Date/Time,vni_close,vni_high,vni_low,vni_pct_chg,vni_rsi,basis_pct,
@@ -68,15 +95,13 @@ advance,decline,ceiling,floor,total_stocks,above_ma50,ema_cross,
 volume,parkinson_vol,vol_ratio,ad_ratio,thrust_pct
 ```
 
-2. Save it as `update.csv` (or place it in the `/csv/` subfolder).
+Lưu file vào `csv/update.csv`, sau đó push lên `main` — GitHub Actions sẽ tự động:
+- Chạy `build.py` để xử lý dữ liệu
+- Merge records mới vào `data.json`
+- Tái tạo `index.html`
+- Commit và push các file đã cập nhật
 
-3. Push to the `main` branch — GitHub Actions will automatically:
-   - Run `build.py` to process the data
-   - Merge new records into `data.json`
-   - Regenerate `index.html`
-   - Commit and push the updated files
-
-You can also trigger the workflow manually via **Actions → Run workflow**.
+Có thể trigger thủ công qua **Actions → Run workflow**.
 
 ---
 
@@ -89,7 +114,11 @@ You can also trigger the workflow manually via **Actions → Run workflow**.
 git clone https://github.com/gmdauminhtoan-sys/vn-fear-greed.git
 cd vn-fear-greed
 
-# Add your CSV data, then run the build script
+# Add your CSV data
+mkdir csv
+# copy update.csv into csv/
+
+# Run the build script
 python build.py
 
 # Open the generated dashboard
@@ -127,6 +156,7 @@ open index.html
 | Frontend | HTML5 / CSS3 / Vanilla JS |
 | Storage | JSON |
 | CI/CD | GitHub Actions |
+| Automation | Python + Windows Batch |
 
 ---
 
