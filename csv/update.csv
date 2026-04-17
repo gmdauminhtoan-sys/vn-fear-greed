@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 Ticker,Date/Time,vni_close,vni_high,vni_low,vni_pct_chg,vni_rsi,basis_pct,advance,decline,ceiling,floor,total_stocks,above_ma50,ema_cross,volume,parkinson_vol,vol_ratio,ad_ratio,thrust_pct
 VNINDEX,4/16/2026 00:00:00,1819.83,1824.03,1799.18,1.07,65.43,0.07,31,66,1,0,108,51,68,819.39,0.97,1.04,0.47,0.93
 VNINDEX,4/17/2026 00:00:00,1831.88,1846.19,1814.47,0.66,66.84,-0.80,71,25,1,0,108,58,71,201.18,0.95,0.27,2.84,0.93
+=======
+Ticker,Date/Time,vni_close,vni_high,vni_low,vni_pct_chg,vni_rsi,basis_pct,advance,decline,ceiling,floor,total_stocks,above_ma50,ema_cross,volume,parkinson_vol,vol_ratio,ad_ratio,thrust_pct
+VNINDEX,4/15/2026 00:00:00,1800.65,1801.89,1786.65,1.41,63.11,-0.03,24,73,2,0,108,55,72,805.51,0.97,1.02,0.33,1.85
+VNINDEX,4/16/2026 00:00:00,1816.71,1824.03,1799.18,0.89,65.07,0.27,29,71,1,0,108,51,67,719.62,0.97,0.92,0.41,0.93
+>>>>>>> 1a15cdae00f4f9b74d5ac92e7afad8c1c344cad5
