@@ -13,7 +13,7 @@ def read_csv(path):
         reader = csv.DictReader(f)
         headers = [h.strip() for h in reader.fieldnames]
         for row in reader:
-            row = {k.strip(): v.strip() for k, v in row.items()}
+            row = {k.strip(): v.strip() for k, v in row.items() if k is not None}
             records.append([
                 row['Date/Time'].split(' ')[0],
                 round(float(row['vni_close']),1), round(float(row['vni_pct_chg']),2),
