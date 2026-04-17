@@ -1,3 +1,3 @@
 Ticker,Date/Time,vni_close,vni_high,vni_low,vni_pct_chg,vni_rsi,basis_pct,advance,decline,ceiling,floor,total_stocks,above_ma50,ema_cross,volume,parkinson_vol,vol_ratio,ad_ratio,thrust_pct
 VNINDEX,4/16/2026 00:00:00,1819.83,1824.03,1799.18,1.07,65.43,0.07,31,66,1,0,108,51,68,819.39,0.97,1.04,0.47,0.93
-VNINDEX,4/17/2026 00:00:00,1831.88,1846.19,1814.47,0.66,66.84,-0.80,71,25,1,0,108,58,71,201.18,0.95,0.27,2.84,0.93
+VNINDEX,4/17/2026 00:00:00,1817.17,1846.19,1812.24,-0.15,64.82,-0.01,57,40,1,0,108,55,68,632.21,0.96,0.82,1.42,0.93
